@@ -5,6 +5,10 @@ import PackageDescription
 
 let package = Package(
     name: "simple-keyframe-animations",
+    platforms: [
+            .iOS(.v17),
+            .macOS(.v14)
+        ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
