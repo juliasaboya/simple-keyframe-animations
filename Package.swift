@@ -5,25 +5,14 @@ import PackageDescription
 
 let package = Package(
     name: "simple-keyframe-animations",
-    platforms: [
-            .iOS(.v17),
-            .macOS(.v14)
-        ],
+    platforms: [.iOS(.v17), .macOS(.v14)],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "simple-keyframe-animations",
-            targets: ["simple-keyframe-animations"]),
+            targets: ["simple-keyframe-animations"]
+        ),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "simple-keyframe-animations",
-            path: "Sources/simple-keyframe-animations"
-        ),
-        .testTarget(
-            name: "simple-keyframe-animationsTests",
-            dependencies: ["simple-keyframe-animations"]),
+        .target(name: "simple-keyframe-animations", path: "Sources/simple-keyframe-animations")
     ]
 )
