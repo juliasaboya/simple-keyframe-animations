@@ -8,10 +8,10 @@
 import SwiftUI
 
 public struct VerticalStretch: ViewModifier {
-    public let duration: TimeInterval
+    @Binding var duration: TimeInterval
     @Binding var startAnimation: Bool
-    public init(duration: TimeInterval, startAnimation: Binding<Bool>) {
-        self.duration = duration
+    public init(duration: Binding<TimeInterval>, startAnimation: Binding<Bool>) {
+        self._duration = duration
         self._startAnimation = startAnimation
     }
     public func body(content: Content) -> some View {
@@ -21,8 +21,9 @@ public struct VerticalStretch: ViewModifier {
                     .scaleEffect(y: frame.verticalSize)
             } keyframes:{ _ in
                 KeyframeTrack(\.verticalSize){
-                    SpringKeyframe(0.7, duration: 1, spring: .bouncy)
-                    SpringKeyframe(1, duration: 1, spring: .bouncy)
+                    CubicKeyframe(0.7, duration: duration * 0.7)
+                    CubicKeyframe(1.15, duration: duration * 0.3)
+                    SpringKeyframe(1, duration: duration * 1, spring: .bouncy)
                 }
             }
 

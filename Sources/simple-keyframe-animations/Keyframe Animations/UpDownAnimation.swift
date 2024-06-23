@@ -8,16 +8,16 @@
 import SwiftUI
 
 public struct UpDownAnimation: ViewModifier {
-    public let duration: TimeInterval
-    @Binding var startKeyAnimation: Bool
+    @Binding var duration: TimeInterval
+    @Binding var startAnimation: Bool
 
-    public init(duration: TimeInterval, startKeyAnimation: Binding<Bool>) {
-        self.duration = duration
-        self._startKeyAnimation = startKeyAnimation
+    public init(duration: Binding<TimeInterval>, startAnimation: Binding<Bool>) {
+        self._duration = duration
+        self._startAnimation = startAnimation
     }
     public func body(content: Content) -> some View {
         content
-            .keyframeAnimator(initialValue: Properties(), trigger: startKeyAnimation) { view, frame in
+            .keyframeAnimator(initialValue: Properties(), trigger: startAnimation) { view, frame in
                 view
                     .offset(y: frame.offsetY)
             } keyframes: { _ in

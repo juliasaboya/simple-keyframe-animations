@@ -8,10 +8,10 @@
 import SwiftUI
 
 public struct QuickShake: ViewModifier {
-    let duration: TimeInterval
+    @Binding var duration: TimeInterval
     @Binding var startAnimation: Bool
-    public init(duration: TimeInterval, startAnimation: Binding<Bool>) {
-        self.duration = duration
+    public init(duration: Binding<TimeInterval>, startAnimation: Binding<Bool>) {
+        self._duration = duration
         self._startAnimation = startAnimation
     }
     public func body(content: Content) -> some View {
@@ -21,15 +21,13 @@ public struct QuickShake: ViewModifier {
                     .rotationEffect(frame.rotation)
             } keyframes: { _ in
                 KeyframeTrack(\.rotation){
-                    LinearKeyframe(Angle(degrees: 15), duration: 0.1)
-                    LinearKeyframe(Angle(degrees: -15), duration: 0.1)
-                    LinearKeyframe(Angle(degrees: 20), duration: 0.1)
-                    LinearKeyframe(Angle(degrees: -20), duration: 0.1)
-                    LinearKeyframe(Angle(degrees: 15), duration: 0.1)
-                    LinearKeyframe(Angle(degrees: -15), duration: 0.1)
-                    LinearKeyframe(Angle(degrees: 0), duration: 0.1)
-
-
+                    LinearKeyframe(Angle(degrees: 15), duration: duration * 0.1)
+                    LinearKeyframe(Angle(degrees: -15), duration: duration * 0.1)
+                    LinearKeyframe(Angle(degrees: 20), duration: duration * 0.1)
+                    LinearKeyframe(Angle(degrees: -20), duration: duration * 0.1)
+                    LinearKeyframe(Angle(degrees: 15), duration: duration * 0.1)
+                    LinearKeyframe(Angle(degrees: -15), duration: duration * 0.1)
+                    LinearKeyframe(Angle(degrees: 0), duration: duration * 0.1)
                 }
             }
     }

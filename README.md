@@ -6,4 +6,7 @@ In addition, it disponibilizes as well some animation combinations that might ma
 
 Usage
 ==========================
-
+1. Add the package dependencies to your project: https://github.com/juliasaboya/simple-keyframe-animations.git
+2. Import 'simple-keyframe-animations' in your project.
+3. Apply the modifiers to any views of the file.
+4. For examples and usage suggestions see: Sources/simple-keyframe-animations/Examples/

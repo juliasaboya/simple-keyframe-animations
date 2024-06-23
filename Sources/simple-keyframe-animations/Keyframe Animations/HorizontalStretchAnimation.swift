@@ -8,10 +8,10 @@
 import SwiftUI
 
 public struct HorizontalStretch: ViewModifier {
-    let duration: TimeInterval
+    @Binding var duration: TimeInterval
     @Binding var startAnimation: Bool
-    public init(duration: TimeInterval, startAnimation: Binding<Bool>) {
-        self.duration = duration
+    public init(duration: Binding<TimeInterval>, startAnimation: Binding<Bool>) {
+        self._duration = duration
         self._startAnimation = startAnimation
     }
     public func body(content: Content) -> some View {
@@ -21,9 +21,9 @@ public struct HorizontalStretch: ViewModifier {
                     .scaleEffect(x: frame.horizontalSize)
             } keyframes:{ _ in
                 KeyframeTrack(\.horizontalSize){
-                    SpringKeyframe(0.6, duration: 0.5, spring: .bouncy)
-                    SpringKeyframe(1.2, duration: 0.5, spring: .bouncy)
-                    SpringKeyframe(1, duration: 1, spring: .bouncy)
+                    SpringKeyframe(0.7, duration: duration * 0.3, spring: .bouncy)
+                    SpringKeyframe(1.3, duration: duration * 0.2, spring: .bouncy)
+                    SpringKeyframe(1, duration: duration * 1, spring: .bouncy)
 
                 }
             }
