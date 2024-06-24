@@ -22,13 +22,13 @@ public struct UpDownAnimation: ViewModifier {
                     .offset(y: frame.offsetY)
             } keyframes: { _ in
                 KeyframeTrack(\.offsetY) {
-                    CubicKeyframe(7, duration: 0.05)
-                    CubicKeyframe(-7, duration: 0.05)
-                    CubicKeyframe(7, duration: 0.05)
-                    CubicKeyframe(-7, duration: 0.05)
-                    CubicKeyframe(7, duration: 0.05)
-                    CubicKeyframe(-7, duration: 0.05)
-                    CubicKeyframe(0, duration: 0.05)
+                    CubicKeyframe(7, duration: duration * 0.05)
+                    CubicKeyframe(-7, duration: duration * 0.05)
+                    CubicKeyframe(7, duration: duration * 0.05)
+                    CubicKeyframe(-7, duration: duration * 0.05)
+                    CubicKeyframe(7, duration: duration * 0.05)
+                    CubicKeyframe(-7, duration: duration * 0.05)
+                    CubicKeyframe(0, duration: duration * 0.05)
                 }
                 
             }

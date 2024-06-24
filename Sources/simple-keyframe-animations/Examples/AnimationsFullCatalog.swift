@@ -65,7 +65,7 @@ struct AnimationsFullCatalog: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 100)
-                    .verticalShake(duration: .constant(1), startAnimation: $startAnimation4)
+                    .verticalShake(duration: .constant(3), startAnimation: $startAnimation4)
                     .onTapGesture {
                         startAnimation4.toggle()
                     }
