@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 public extension View {
-    func verticalShake(duration: Binding<TimeInterval>, startAnimation: Binding<Bool>) -> some View {
+    func verticalShake(duration: TimeInterval, startAnimation: Binding<Bool>) -> some View {
         modifier(UpDownAnimation(duration: duration, startAnimation: startAnimation))
     }
 }

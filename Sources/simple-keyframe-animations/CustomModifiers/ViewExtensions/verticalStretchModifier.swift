@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 public extension View {
-    func verticalStretch(duration: Binding<TimeInterval>, startAnimation: Binding<Bool>) -> some View {
+    func verticalStretch(duration: TimeInterval, startAnimation: Binding<Bool>) -> some View {
         modifier(VerticalStretch(duration: duration, startAnimation: startAnimation))
     }
 }

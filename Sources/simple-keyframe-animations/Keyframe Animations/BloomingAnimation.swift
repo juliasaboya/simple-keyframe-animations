@@ -8,11 +8,11 @@
 import SwiftUI
 
 public struct AppearingLetters: ViewModifier {
-    @Binding var duration: TimeInterval
+    var duration: TimeInterval 
     public var properties = Properties(scale: 0)
     @Binding var startAnimation: Bool
-    public init(duration: Binding<TimeInterval>, startAnimation: Binding<Bool>) {
-        self._duration = duration
+    public init(duration: TimeInterval, startAnimation: Binding<Bool>) {
+        self.duration = duration
         self._startAnimation = startAnimation
     }
 

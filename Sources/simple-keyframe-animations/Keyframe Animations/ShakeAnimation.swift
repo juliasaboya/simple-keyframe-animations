@@ -8,12 +8,7 @@
 import SwiftUI
 
 public struct ShakeAnimation: ViewModifier {
-
-    //    enum `Type` {
-    //        case toggleFill
-    //        case `default`
-    //    }
-    var duration: TimeInterval
+    var duration: TimeInterval 
     @Binding var startKeyAnimation: Bool
 
     public init(duration: TimeInterval, startKeyAnimation: Binding<Bool>) {

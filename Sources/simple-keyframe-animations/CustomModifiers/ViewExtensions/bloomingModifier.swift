@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 public extension View {
-    func blooming(duration: Binding<TimeInterval>, startAnimation: Binding<Bool>) -> some View {
+    func blooming(duration: TimeInterval, startAnimation: Binding<Bool>) -> some View {
         modifier(AppearingLetters(duration: duration, startAnimation: startAnimation))
     }
 }

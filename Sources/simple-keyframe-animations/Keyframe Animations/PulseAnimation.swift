@@ -8,11 +8,11 @@
 import SwiftUI
 
 public struct ScaleAnimation: ViewModifier {
-    @Binding var duration: TimeInterval
+    var duration: TimeInterval
     @Binding var startAnimation: Bool
 
-    public init(duration: Binding<TimeInterval>, startAnimation: Binding<Bool>) {
-        self._duration = duration
+    public init(duration: TimeInterval, startAnimation: Binding<Bool>) {
+        self.duration = duration
         self._startAnimation = startAnimation
     }
     public func body(content: Content) -> some View {

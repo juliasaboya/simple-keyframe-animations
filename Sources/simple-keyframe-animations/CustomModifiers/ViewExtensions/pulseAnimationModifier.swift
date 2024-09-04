@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 public extension View {
-    func pulseAnimation(duration: Binding<TimeInterval>, startAnimation: Binding<Bool>) -> some View {
+    func pulseAnimation(duration: TimeInterval, startAnimation: Binding<Bool>) -> some View {
             modifier(ScaleAnimation(duration: duration, startAnimation: startAnimation))
     }
 }
